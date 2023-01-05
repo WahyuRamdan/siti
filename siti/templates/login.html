@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html lang="en" style="margin-top: -28px;">
+{% load static %}
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, shrink-to-fit=no">
+    <title>Untitled</title>
+    <link rel="stylesheet" href="{% get_static_prefix %}assets/bootstrap/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Catamaran:100,200,300,400,500,600,700,800,900&amp;display=swap">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Lato:100,100i,300,300i,400,400i,700,700i,900,900i&amp;display=swap">
+    <link rel="stylesheet" href="{% get_static_prefix %}assets/css/Contact-Form-by-Moorcam.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/css/theme.bootstrap_4.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.css">
+    <link rel="stylesheet" href="{% get_static_prefix %}assets/css/Ludens---1-Index-Table-with-Search--Sort-Filters-v20.css">
+    <link rel="stylesheet" href="{% get_static_prefix %}assets/css/VentasPro-Login.css">
+</head>
+
+<body>
+    <nav class="navbar navbar-dark navbar-expand-lg fixed-top bg-dark navbar-custom">
+        <div class="container"><a class="navbar-brand" href="/">Grammedia</a><button data-bs-toggle="collapse" class="navbar-toggler" data-bs-target="#navbarResponsive"><span class="visually-hidden">Toggle navigation</span><span class="navbar-toggler-icon"></span></button>
+            <div class="collapse navbar-collapse" id="navbarResponsive">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item"><a class="nav-link" href="/">Home</a></li>
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="/maps">maps</a></li>
+                        <li class="nav-item"><a class="nav-link" href="/table">Table</a></li>
+                    {% endif %}
+                    {% if request.user.is_authenticated %}
+                        <li class="nav-item"><a class="nav-link" href="/logout">Logout</a></li>
+                            {% else %}
+                        <li class="nav-item"><a class="nav-link" href="/login">Login</a></li>
+                    {% endif %}
+                </ul>
+            </div>
+        </div>
+    </nav>
+    <section style="margin-top: 94px;">
+        <div id="main">
+            <div class="text-center" id="info">
+                <h3 class="text-center" style="margin-top: 26px;margin-bottom: 8px;">LOGIN</h3>
+                <form class="text-start" method="post" id="form-login">
+                    {% csrf_token %}
+                    <div class="mb-3"><label class="form-label" id="lbl-usuario" for="txt-usuario">Username</label><input name="username" class="form-control" type="text" id="txt-usuario"></div>
+                    <div class="mb-3"><label class="form-label" id="lbl-password" for="txt-password">Password</label><input name="password" class="form-control" type="password" id="txt-password"></div>
+                    <div>
+                        <a class="btn btn-primary" id="btn-sesion-1" href="/register" style="--bs-primary: #256db4;--bs-primary-rgb: 37,109,180;background: var(--bs-btn-hover-border-color);">Register</a>
+                        <button class="btn btn-primary" id="btn-sesion-2" type="submit" style="--bs-primary: #256db4;--bs-primary-rgb: 37,109,180;background: #256db4;margin-left: 15px;">Login</button>
+                    </div>
+                </form>
+            </div>
+        </div>
+    </section>
+    <footer class="py-5 bg-black">
+        <div class="container">
+            <p class="text-center text-white m-0 small">Copyright&nbsp;© Siti Shofia Yulianti</p>
+        </div>
+    </footer>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.2/dist/js/bootstrap.bundle.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/jquery.tablesorter.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-filter.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jquery.tablesorter/2.31.2/js/widgets/widget-storage.min.js"></script>
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/jqueryui/1.12.1/jquery-ui.min.js"></script>
+    <script src="{% get_static_prefix %}assets/js/Ludens---1-Index-Table-with-Search--Sort-Filters-v20-1.js"></script>
+    <script src="{% get_static_prefix %}assets/js/Ludens---1-Index-Table-with-Search--Sort-Filters-v20.js"></script>
+</body>
+
+</html>
