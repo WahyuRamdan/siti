@@ -26,6 +26,7 @@ SECRET_KEY = 'django-insecure-z*tn!y0qfux4k2$f$a@l8i%x5g*kf_r$ank+(6i-zhs35hhoyh
 DEBUG = True
 
 ALLOWED_HOSTS = ["*"]
+CSRF_TRUSTED_ORIGINS = ['https://*.siti-production.up.railway.app','https://*.0.0.0.0']
 
 
 # Application definition
